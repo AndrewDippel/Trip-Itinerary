@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS trip_itinerary;
-CREATE DATABASE trip_itinerary;
+DROP DATABASE IF EXISTS Trip_Itinerary;
+CREATE DATABASE Trip_Itinerary;
