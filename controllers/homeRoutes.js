@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Destinations, User, Itinerary } = require('../models');
+const { Destinations, User } = require('../models');
 const withAuth = require('../utils/auth');
 //
 //
@@ -37,14 +37,14 @@ router.get('/dashboard', withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const projectData = await Destinations.findAll({
-      // where: {
-      //   user_id: req.session.user_id
-      // },
-      // include: [
-      //   {
-      //     model: User,
-      //   },
-      // ],
+      where: {
+        user_id: req.session.user_id
+      },
+      include: [
+        {
+          model: User,
+        },
+      ],
     });
 
     // Serialize data so the template can read it
@@ -60,33 +60,36 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-router.get('/destinations/:id', withAuth, async (req, res) => {
-  try {
-    const projectData = await Destinations.findByPk(req.params.id, {
-      where: {
-        user_id: req.session.user_id
-      },
-      include: [
-        {
-          model: User,
-        },
-        ,
-        {
-          model: Itinerary
-        }
-      ],
-    });
 
-    const destinations = projectData.get({ plain: true });
+//route to view specific destination itinerary for future development!!!
 
-    res.render('destinations', {
-      ...destinations,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/destinations/:id', withAuth, async (req, res) => {
+//   try {
+//     const projectData = await Destinations.findByPk(req.params.id, {
+//       where: {
+//         user_id: req.session.user_id
+//       },
+//       include: [
+//         {
+//           model: User,
+//         },
+//         ,
+//         {
+//           model: Itinerary
+//         }
+//       ],
+//     });
+
+//     const destinations = projectData.get({ plain: true });
+
+//     res.render('destinations', {
+//       ...destinations,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 
