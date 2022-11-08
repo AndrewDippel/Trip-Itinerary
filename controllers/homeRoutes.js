@@ -43,7 +43,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     const destinations = projectData.map((project) => project.get({ plain: true }));
-    console.log(destinations)
+    console.log(destinations);
 
     // Pass serialized data and session flag into template
     res.render('dashboard', {
