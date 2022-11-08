@@ -1,14 +1,7 @@
 const router = require('express').Router();
 const { Destinations, User, Itinerary } = require('../models');
 const withAuth = require('../utils/auth');
-//
-//
-//
-//
-//
-//
-//
-//
+
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -35,16 +28,9 @@ router.get('/', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    
     const projectData = await Destinations.findAll({
-      // where: {
-      //   user_id: req.session.user_id
-      // },
-      // include: [
-      //   {
-      //     model: User,
-      //   },
-      // ],
+      
     });
 
     // Serialize data so the template can read it

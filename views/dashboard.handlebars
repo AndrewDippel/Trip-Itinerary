@@ -1,5 +1,170 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    ></script>
+    <title>Take Me Away.....</title>
+  </head>
+  <body>
+    <section
+      class="hero"
+      style="background-color: rgb(10, 163, 125); border-bottom: rgb(12, 14, 15) 5px solid;"
+    >
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title has-text-centered animated lightSpeedIn">
+            <i class="fa-solid fa-earth-africa"></i> Take Me Away....
+          </h1>
+          <div class="userInfo">
+            <a class="logout" href="/views/login.handlebars">Logout</a>
+            <p>Hi! {{user.username}}</p>
+            <p>Email: {{user.email}}</p>
+    
+        </div>
+        </div>
+      </div>
+    </section>
+    <br /><br />
+
+    <div class="container animated fadeIn delay-1s">
+      <div class="card has-text-centered is-wide main-center-card"> 
+       Welcome to Take Me Away....Your Personal Travel Itinerary Planner.
+        <br />
+        <br />
+        <div class="field">
+            <label class="label">Search</label>
+            <div class="control">
+              <input id="autocomplete" class="input" placeholder="Search Here" type="text" />
+            </div>
+        </div>
+        <div class="field is-grouped">
+            <div class="control">
+              <button id="searchsubmit" class="button is-link">Search</button>
+            </div>
+          </div>
+        
+        
+    <br /><br />
+    <div class="container animated fadeIn delay-1s">
+      <div
+        class="columns is-multiline is-mobile"
+        style="background-color: rgb(10, 163, 125);"
+      >
+        <div class="column is-2"></div>
+        <div class="column is-4">
+          <h1 class="headingItinerary">What to do</h1>
+          <p>
+            Enter you Travel dates, where you are going and your Itinerary.
+            Let us Take You Away....
+          </p>
+          <br /><br />
+                
+        </div>
+        <div class="column is-1 has-text-centered"></div>
+        <div class="column is-4">
+          <h1 class="datePick">Enter Date</h1>
+          
+          <input type="date">
+          <br><br/>
+
+            <div class="field">
+              <label class="label">Where are you going?</label>
+              <div class="field-body">
+                <div class="field is-expanded">
+                  <div class="field has-addons">
+                    <p class="control is-expanded has-icons-left">
+                      <!--Itin City Input-->
+                      <input
+                        class="input"
+                        type="text"
+                        placeholder="City"
+                        id="itinCity"/>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label"
+                >Itinerary</label
+              >
+              <div class="control">
+                
+                <textarea
+                  id="itinAct"
+                  class="textarea"
+                  placeholder="Activities, Sightseeing"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="field is-grouped">
+              <div class="control">
+                <button id="saveItinBtn" class="button is-info is-light">
+                  Save
+                </button>
+              </div>
+              <div class="control">
+                <button id="editBtn" class="button is-info is-light">
+                  Edit
+                </button>
+                <div class="control">
+                    <button id="deleteBtn" class="button is-info is-light">
+                      Delete
+                    </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+
+    <footer class="footer"></footer>
+
+    
+    <script type="" src=""></script>
+   
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Loop over each object in the projects array -->
-{{#each destinations as |project| }}
+{{!-- {{#each destinations as |project| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
@@ -15,4 +180,4 @@
     </p>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}
