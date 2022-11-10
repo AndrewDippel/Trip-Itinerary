@@ -1,14 +1,17 @@
 [
   {
-    "name": "Egypt",
-    "description": "see the pyrimids"
+    "country": "Egypt",
+    "destination": "nah",
+    "itin": "see the pyrimids"
   },
   {
-    "name": "Japan",
-    "description": "see one piece statue "
+    "country": "Japan",
+    "destination": "yea ",
+    "itin": "see one piece statue"
   },
   {
-    "name": "Greece",
-    "description": "Lamb and Coffee"
+    "country": "Greece",
+    "destination": "Cyprus",
+    "itin": "Lamb and Coffee"
   }
 ]

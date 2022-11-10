@@ -1,57 +1,41 @@
+<section class="hero" style="background-color: rgb(10, 163, 125); border-bottom: rgb(12, 14, 15) 5px solid;">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered animated lightSpeedIn">
+        <i class="fa-solid fa-earth-africa"></i> Take Me Away....
+      </h1>
+      <div class="userInfo">
+        <a class="logout" href="/views/login.handlebars">Logout</a>
+        <p>Hi! {{user.name}}</p>
+        <p>Email: {{user.email}}</p>
 
-
-  <body>
-    <section
-      class="hero"
-      style="background-color: rgb(10, 163, 125); border-bottom: rgb(12, 14, 15) 5px solid;"
-    >
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title has-text-centered animated lightSpeedIn">
-            <i class="fa-solid fa-earth-africa"></i> Take Me Away....
-          </h1>
-          <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-          <div class="userInfo">
-            <p>Hi! {{user.username}}</p>
-            <p>Email: {{user.email}}</p>
-    
-        </div>
-        </div>
       </div>
-    </section>
-    <br /><br />
+    </div>
+  </div>
+</section>
+<br /><br />
 
-    <div class="container animated fadeIn delay-1s">
-      <div class="card has-text-centered is-wide main-center-card"> 
-       Welcome to Take Me Away....Your Personal Travel Itinerary Planner.
-        <br />
-        <br />
-        <div class="field">
-            <label class="label">Add Your Destination</label>
-            <div class="control">
-              <input id="autocomplete" class="input" placeholder="Add Destination" type="text" />
-            </div>
-        </div>
-        <div class="field is-grouped">
-            <div class="control">
-              <button id="searchsubmit" class="button is-link">Add</button>
-            </div>
-          </div>
-        
-        
+<div class="container animated fadeIn delay-1s">
+  <div class="card has-text-centered is-wide main-center-card">
+    Welcome to Take Me Away....Your Personal Travel Itinerary Planner.
+    <br />
+    <br />
+    <div class="field">
+      <label class="label">Search</label>
+      <div class="control">
+        <input id="autocomplete" class="input" placeholder="Search Here" type="text" />
+      </div>
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button id="searchsubmit" class="button is-link">Search</button>
+      </div>
+    </div>
+
+
     <br /><br />
     <div class="container animated fadeIn delay-1s">
-      <div
-        class="columns is-multiline is-mobile"
-        style="background-color: rgb(10, 163, 125);"
-      >
+      <div class="columns is-multiline is-mobile" style="background-color: rgb(10, 163, 125);">
         <div class="column is-2"></div>
         <div class="column is-4">
           <h1 class="headingItinerary">What to do</h1>
@@ -59,114 +43,118 @@
             Enter you Travel dates, where you are going and your Itinerary.
             Let us Take You Away....
           </p>
+          <div class="destination-list">
+            {{#each destinations as |destinations| }}
+            <div class="row mb-4 destinations">
+              <div class="col-md-5">
+                <h2>{{destinations.country}}</h2>
+                <h2>{{destinations.destination}}</h2>
+
+              </div>
+              <div class="col-md-7">
+                <p>
+                  {{destinations.itin}}
+                </p>
+                <p>Created by {{destinations.user.name}} on {{format_date destinations.date_created}}</p>
+              </div>
+            </div>
+            {{/each}}
+          </div>
           <br /><br />
-                
+
         </div>
         <div class="column is-1 has-text-centered"></div>
         <div class="column is-4">
           <h1 class="datePick">Enter Date</h1>
-          
-          <input type="date">
-          <br><br/>
 
-            <div class="field">
-              <label class="label">Where are you going?</label>
-              <div class="field-body">
-                <div class="field is-expanded">
-                  <div class="field has-addons">
-                    <p class="control is-expanded">
-                      
-                      <input
-                        class="input"
-                        type="text"
-                        placeholder="City"
-                        id="itinCity"/>
-                    </p>
-                  </div>
+          <input id="date" type="date">
+          <br><br />
+
+          <div class="field">
+            <label class="label">Where are you going?</label>
+            <div class="field-body">
+              <div class="field is-expanded">
+                <div class="field has-addons">
+                  <p class="control is-expanded">
+                    <!--Itin City Input-->
+                    <input class="input" type="text" placeholder="City" id="itinCity" />
+                  </p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="field">
-              <label class="label"
-                >Itinerary</label
-              >
-              <div class="control">
-                
-                <textarea
-                  id="itinAct"
-                  class="textarea"
-                  placeholder="Activities, Sightseeing"
-                ></textarea>
-              </div>
-            </div>
+          <div class="field">
+            <label class="label">Itinerary</label>
+            <div class="control">
 
-            <div class="field is-grouped">
-              <div class="control">
-                <button id="saveItinBtn" class="button is-info is-light">
-                  Save
-                </button>
-              </div>
-              <div class="control">
-                <button id="editBtn" class="button is-info is-light">
-                  Edit
-                </button>
-              </div>
-                <div class="control">
-                    <button id="deleteBtn" class="button is-info is-light">
-                      Delete
-                    </button>
-                </div>
-              </div>
+              <textarea id="itinAct" class="textarea" placeholder="Activities, Sightseeing"></textarea>
             </div>
-          </form>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button id="saveItinBtn" class="button is-info is-light">
+                Save
+              </button>
+            </div>
+            <div class="control">
+              <button id="editBtn" class="button is-info is-light">
+                Edit
+              </button>
+            </div>
+            <div class="control">
+              <button id="deleteBtn" class="button is-info is-light">
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
+        </form>
       </div>
     </div>
-    <br /><br />
-
-    <footer class="footer"></footer>
-
-    
-    <script type="" src=""></script>
-   <script src="/controllers/api/autocomplete.js"></script>
-  </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Loop over each object in the projects array -->
-{{!-- {{#each destinations as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
+  <br /><br />
+
+  <footer class="footer"></footer>
+
+
+  <script src="/js/dashboard.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Loop over each object in the projects array -->
+  {{!-- {{#each destinations as |project| }}
+  <div class="row mb-4 project">
+    <div class="col-md-5">
+      <h2>
+        <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+
+        <a href="/project/{{project.id}}">{{project.name}}</a>
+      </h2>
+      <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+    </div>
+    <div class="col-md-7">
+      <p>
+        {{project.description}}
+      </p>
+    </div>
   </div>
-</div>
-{{/each}} --}}
+  {{/each}} --}}
