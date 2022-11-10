@@ -18,4 +18,10 @@ header,
   text-decoration: underline;
 }
 
+.container{
+  background-color: #1b89bc;
+}
 
+body{
+  background-color: #1b89bc;
+}
