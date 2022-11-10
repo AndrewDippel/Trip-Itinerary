@@ -20,7 +20,7 @@ Destinations.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    description: {
+    destination: {
       type: DataTypes.STRING,
     },
     itin: {
