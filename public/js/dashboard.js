@@ -2,12 +2,12 @@ const createDestination = async (event) => {
     event.preventDefault();
 
     const city = document.querySelector('#itinCity').value.trim();
-    const date = document.querySelector('.datePick');
+    const date = document.querySelector('#date').value;
     const itin = document.querySelector('#itinCity').value.trim();
 
 
     if (city && date && itin) {
-        const response = await fetch('/', {
+        const response = await fetch('/api/destinationRoutes/', {
             method: 'POST',
             body: JSON.stringify({ city, date, itin }),
             headers: { 'Content-Type': 'application/json' },
@@ -64,8 +64,8 @@ async function editDestination(event) {
 
 
 document
-    .querySelector('.create-destination')
-    .addEventListener('#saveItinBtn', createDestination);
+    .querySelector('#saveItinBtn')
+    .addEventListener('click', createDestination);
 
 document
     .querySelector('.delete-destination')
