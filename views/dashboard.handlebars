@@ -16,6 +16,9 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     ></script>
+    <script defer
+    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCYnluejIHnDHF5HfAijb7UL3fUYfzuhS0&libraries=places&callback=initAutocomplete'></script>
+    
     <title>Take Me Away.....</title>
   </head>
   <body>
@@ -45,14 +48,14 @@
         <br />
         <br />
         <div class="field">
-            <label class="label">Search</label>
+            <label class="label">Add Your Destination</label>
             <div class="control">
-              <input id="autocomplete" class="input" placeholder="Search Here" type="text" />
+              <input id="autocomplete" class="input" placeholder="Add Destination" type="text" />
             </div>
         </div>
         <div class="field is-grouped">
             <div class="control">
-              <button id="searchsubmit" class="button is-link">Search</button>
+              <button id="searchsubmit" class="button is-link">Add</button>
             </div>
           </div>
         
@@ -85,7 +88,7 @@
               <div class="field-body">
                 <div class="field is-expanded">
                   <div class="field has-addons">
-                    <p class="control is-expanded has-icons-left">
+                    <p class="control is-expanded">
                       <!--Itin City Input-->
                       <input
                         class="input"
@@ -122,6 +125,7 @@
                 <button id="editBtn" class="button is-info is-light">
                   Edit
                 </button>
+              </div>
                 <div class="control">
                     <button id="deleteBtn" class="button is-info is-light">
                       Delete
@@ -139,7 +143,7 @@
 
     
     <script type="" src=""></script>
-   
+   <script src="/controllers/api/autocomplete.js"></script>
   </body>
 </html>
 
