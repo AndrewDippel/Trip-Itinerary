@@ -1,15 +1,18 @@
 const createDestination = async (event) => {
     event.preventDefault();
+    console.log("hello")
 
-    const city = document.querySelector('#itinCity').value.trim();
+    const country = document.querySelector('#autocomplete').value.trim();
+    const destination = document.querySelector('#itinCity').value;
     const date = document.querySelector('#date').value;
-    const itin = document.querySelector('#itinCity').value.trim();
+    const itin = document.querySelector('#itinAct').value.trim();
 
+    console.log(country, destination, date, itin)
 
-    if (city && date && itin) {
-        const response = await fetch('/api/destinationRoutes/', {
+    if (country && destination && date && itin) {
+        const response = await fetch('/api/destination/', {
             method: 'POST',
-            body: JSON.stringify({ city, date, itin }),
+            body: JSON.stringify({ country, destination, date, itin }),
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -68,9 +71,9 @@ document
     .addEventListener('click', createDestination);
 
 document
-    .querySelector('.delete-destination')
-    .addEventListener('#deleteBtn', deleteDestination);
+    .querySelector('#deleteBtn')
+    .addEventListener('click', deleteDestination);
 
 document
-    .querySelector('.edit-destination')
-    .addEventListener('#editBtn', editDestination);
+    .querySelector('#editBtn')
+    .addEventListener('click', editDestination);
