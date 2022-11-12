@@ -1,0 +1,4 @@
+DB_NAME=''
+DB_USER=''
+DB_PASSWORD=''
+JAWSDB_URL=mysql://s1btknd208k23jct:qluvyzm21nge8kun@o2olb7w3xv09alub.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/c87qvpi2ysg5n8z7
