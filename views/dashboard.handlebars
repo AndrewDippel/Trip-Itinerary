@@ -21,35 +21,18 @@
   </div>
 </section>
 <br /><br />
-
-<div class="container animated fadeIn delay-1s">
-  <div class="card has-text-centered is-wide main-center-card">
-    Welcome to Take Me Away....Your Personal Travel Itinerary Planner.
-    <br />
-    <br />
     <div class="field">
-      <label class="label">Search</label>
+      <label class="label">Add Country</label>
       <div class="control">
-        <input id="autocomplete" class="input" placeholder="Search Here" type="text" />
+        <input id="autocomplete" class="input" placeholder="Add Country" type="text" />
       </div>
     </div>
-    <div class="field is-grouped">
-      <div class="control">
-        <button id="searchsubmit" class="button is-link">Search</button>
-      </div>
-    </div>
-
-
     <br /><br />
     <div class="container animated fadeIn delay-1s">
       <div class="columns is-multiline is-mobile" style="background-color: rgb(10, 163, 125);">
         <div class="column is-2"></div>
         <div class="column is-4">
-          <h1 class="headingItinerary">What to do</h1>
-          <p>
-            Enter you Travel dates, where you are going and your Itinerary.
-            Let us Take You Away....
-          </p>
+          <label class="label">Enter Your travel dates, where you are going & your Itinerary.</label>
           <div class="destination-list">
             {{#each destinations as |destinations| }}
             <div class="row mb-4 destinations">
@@ -123,9 +106,9 @@
   </div>
   <br /><br />
 
-  <footer class="footer"></footer>
+  {{!-- <footer class="footer"></footer> --}}
 
-
+ <script src="/controllers/api/autocomplete.js"></script>
   <script src="/js/dashboard.js"></script>
 
 
