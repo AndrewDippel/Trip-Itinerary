@@ -1,20 +1,65 @@
 # Take Me Away....
 
-In this mini-project, you will work with a group to build a full-stack crowdfunding app using Node.js, Express.js, Sequelize, Handlebars.js, and MVC architecture.
+In this project, we work with a group to build a full-stack trip planning app 
+
+## Table of Conents
+
+- [Project Description](#project-description)
+- [Links](#links)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Technologies Used](#technologies)
+- [Credits](#credits)
+- [License](#license)
+
+## Project Requirements
+
+The project must fulfil the following requirements:
+
+Use Node.js and Express.js to create a RESTful API.
+
+Use Handlebars.js as the templating engine.
+
+Use MySQL and the Sequelize ORM for the database.
+
+Have both GET and POST routes for retrieving and adding new data.
+
+Be deployed using Heroku (with data).
+
+Use at least one new library, package, or technology that we haven’t discussed.
+
+Have a polished UI.
+
+Be responsive.
+
+Be interactive (i.e., accept and respond to user input).
+
+Have a folder structure that meets the MVC paradigm.
+
+Include authentication (express-session and cookies).
+
+Protect API keys and sensitive information with environment variables.
+
+Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
+## Links
+
+Github: https://github.com/AndrewDippel/Trip-Itinerary
+Heroku: 
 
 ## User Stories
 
-* As a user, I want to see a list of current projects seeking funding.
+* As a registered user, I want to plan my holiday itinerary.
 
-* As a user, I want to be able to create an account.
+* As a registered user, I want to be able to store locations in multiple destinations including countries, the date, the city and write notes on the sites to see.
 
-* As a registered user, I want to post my own projects to ask for funding.
+* As a registered user, I want to be able reuse my list when logging back into the site. 
 
 ### Acceptance Criteria
 
-* It's done when the `/` homepage route renders a list of all projects from the database.
-
-* It's done when the `/project/:id` route renders an individual project's details based on the route parameter id.
+* It's done when the `/` homepage route renders a list of the itinerary list from the database.
 
 * It's done when the `/login` route renders a form to log in and a form to create a new account.
 
@@ -22,13 +67,11 @@ In this mini-project, you will work with a group to build a full-stack crowdfund
 
 * It's done when a new user can create an account on the login page and then be immediately logged in with a session.
 
-* It's done when the `/profile` route renders the logged-in user's projects and a form to create a new project.
+* It's done when the `/distination` route renders the logged-in user's projects and a form to create a new project.
 
-* It's done when only a logged in user can visit the `/profile` route.
+* It's done when only a logged in user can visit the `/destination` route.
 
-* It's done when a logged in user is redirected to `/profile` when they try to visit `/login` again.
-
-* It's done when a user on the profile page can use the form to create a new project in the database.
+* It's done when a user on the dashboard page can use the form to create a new project in the database.
 
 * It's done when a user on the profile page can select a "Delete" button to remove their project from the database.
 
