@@ -26,9 +26,10 @@ const createDestination = async (event) => {
 
 const deleteDestination = async (event) => {
   if (event.target.hasAttribute('data-id')) {
-    //const id = event.target.getAttribute('data-id');
+    const id = event.target.getAttribute('data-id');
+    console.log(id);
 
-    const response = await fetch('/', {
+    const response = await fetch(`/api/destination/${id}`, {
       method: 'DELETE',
     });
 
@@ -71,9 +72,9 @@ document
   .addEventListener('click', createDestination);
 
 document
-  .querySelector('#deleteBtn')
+  .querySelector('#deleteOne')
   .addEventListener('click', deleteDestination);
 
 document
-  .querySelector('#editBtn')
+  .querySelector('#editOne')
   .addEventListener('click', editDestination);

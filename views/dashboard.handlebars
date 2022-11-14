@@ -3,7 +3,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title has-text-centered animated lightSpeedIn">
-         Take Me Away....<i class="fa-solid fa-earth-africa"></i>
+        Take Me Away....<i class="fa-solid fa-earth-africa"></i>
       </h1>
       <div>
         {{#if logged_in}}
@@ -55,20 +55,21 @@
 
             <p> Trip date {{format_date destinations.date}} </p>
             <p>Created by {{destinations.user.name}}</p>
-            
+
 
           </div>
         </div>
         <footer class="card-footer">
-          <a href="#" class="card-footer-item">Save</a>
-          <a href="#" class="card-footer-item">Edit</a>
-          <a href="#" class="card-footer-item">Delete</a>
+          <a href="#" id="saveOne" class="card-footer-item">Save</a>
+          <a href="#" id="editOne" class="card-footer-item">Edit</a>
+          <a href="#" id="deleteOne" class="card-footer-item" data-id="{{destinations.id}}">Delete</a>
         </footer>
         {{/each}}
       </div>
 
     </div>
-    <div class="column is-1 has-text-centered"></div>
+    <div class=" column is-1 has-text-centered">
+    </div>
     <div class="column is-4">
       <h1 class="datePick">Enter Date</h1>
 
@@ -121,24 +122,3 @@
 
       <script src="/controllers/api/autocomplete.js"></script>
       <script src="/js/dashboard.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
