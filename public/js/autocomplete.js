@@ -1,21 +1,23 @@
+// For Future Development//
 
 
-let autocomplete;
 
-function initAutocomplete() {
-  autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById('autocomplete'),
-    {
-      fields: ['place_id', 'geometry', 'name', 'address_components']
-    });
-  // autocomplete.addListener('place_changed', onPlaceChanged);
-}
+// let autocomplete;
 
-window.initAutocomplete = initAutocomplete;
+// function initAutocomplete() {
+//   autocomplete = new google.maps.places.Autocomplete(
+//     document.getElementById('autocomplete'),
+//     {
+//       fields: ['place_id', 'geometry', 'name', 'address_components']
+//     });
+//   // autocomplete.addListener('place_changed', onPlaceChanged);
+// }
 
-document.getElementById("searchsubmit").addEventListener("click", function () {
-  onPlaceChanged()
-})
+// window.initAutocomplete = initAutocomplete;
+
+// document.getElementById("searchsubmit").addEventListener("click", function () {
+//   onPlaceChanged()
+// })
 
 // function getPostcode(place) {
 //   let postcode = "";
