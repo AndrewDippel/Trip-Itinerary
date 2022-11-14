@@ -47,9 +47,11 @@
 
 ## Links
 
-Github: https://github.com/AndrewDippel/Trip-Itinerary
-Heroku: https://dashboard.heroku.com/apps/arcane-beach-31622
-Project URL: https://arcane-beach-31622.herokuapp.com/
+* Github: https://github.com/AndrewDippel/Trip-Itinerary
+
+* Heroku: https://dashboard.heroku.com/apps/arcane-beach-31622
+
+* Project URL: https://arcane-beach-31622.herokuapp.com/
 
 ## User Stories
 
@@ -61,7 +63,7 @@ Project URL: https://arcane-beach-31622.herokuapp.com/
 
 ### Acceptance Criteria
 
-* It's done when the `/` homepage route renders a list of the itinerary list from the database.
+* It's done when the `/` destination route renders a list of the itinerary list from the database.
 
 * It's done when the `/login` route renders a form to log in and a form to create a new account.
 
@@ -69,13 +71,13 @@ Project URL: https://arcane-beach-31622.herokuapp.com/
 
 * It's done when a new user can create an account on the login page and then be immediately logged in with a session.
 
-* It's done when the `/distination` route renders the logged-in user's projects and a form to create a new project.
+* It's done when the `/distination` route renders the logged-in user's destinatins and a form to create a new destination.
 
 * It's done when only a logged in user can visit the `/destination` route.
 
-* It's done when a user on the dashboard page can use the form to create a new project in the database.
+* It's done when a user on the dashboard page can use the form to create a new destination in the database.
 
-* It's done when a user on the profile page can select a "Delete" button to remove their project from the database.
+* It's done when a user on the profile page can select a "Delete" button to remove their destination from the database.
 
 * It's done when a logged-in user can select a "Logout" button to remove their session.
 
@@ -95,7 +97,7 @@ Project URL: https://arcane-beach-31622.herokuapp.com/
 
   * Heroku
 
-  * Bulma Library
+  * Bulma Library (new technology)
 
   * Insomnia
 
@@ -104,6 +106,10 @@ Project URL: https://arcane-beach-31622.herokuapp.com/
   * Express.js
 
   * Handlebars.js
+
+  * ESLint
+
+  * Prettier
 
 
 ## Screen Shots
