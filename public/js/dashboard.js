@@ -29,7 +29,7 @@ const deleteDestination = async (event) => {
     const id = event.target.getAttribute('data-id');
     console.log(id);
 
-    const response = await fetch('/api/dashboard', {
+    const response = await fetch(`/api/destination/${id}`, {
       method: 'DELETE',
     });
 
