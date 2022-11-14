@@ -28,7 +28,6 @@ router.get('/', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    
     const projectData = await Destinations.findAll({
 
       where: {
