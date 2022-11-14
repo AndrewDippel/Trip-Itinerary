@@ -15,7 +15,7 @@ Destinations.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date_created: {
+    date: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
