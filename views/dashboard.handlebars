@@ -1,125 +1,130 @@
-<section class="hero" style="background-color: rgb(10, 163, 125); border-bottom: rgb(12, 14, 15) 5px solid;">
+<section class="hero"
+  style="background-color: rgb(10, 163, 125); border-bottom: rgb(12, 14, 15) 5px solid; border-left: rgb(12, 14, 15) 5px solid; border-right: rgb(12, 14, 15) 5px solid; ">
   <div class="hero-body">
     <div class="container">
       <h1 class="title has-text-centered animated lightSpeedIn">
-        <i class="fa-solid fa-earth-africa"></i> Take Me Away....
+         Take Me Away....<i class="fa-solid fa-earth-africa"></i>
       </h1>
       <div>
-      {{#if logged_in}}
+        {{#if logged_in}}
         <button class="button" id="logout">logout</button>
         {{else}}
         <p href="/login">login</p>
         {{/if}}
-      </nav>
-          <div class="userInfo">
-            <p>Hi! {{user.username}}</p>
-            <p>Email: {{user.email}}</p>
-
-      
+        </nav>
+        <div class="userInfo">
+          <p>Hi! {{user.username}}</p>
+          <p>Email: {{user.email}}</p>
+        </div>
       </div>
     </div>
-  </div>
 </section>
 <br /><br />
-    <div class="field">
-      <label class="label">Add Country</label>
-      <div class="control">
-        <input id="autocomplete" class="input" placeholder="Add Country" type="text" />
-      </div>
-    </div>
-    <br /><br />
-    <div class="container animated fadeIn delay-1s">
-      <div class="columns is-multiline is-mobile" style="background-color: rgb(10, 163, 125);">
-        <div class="column is-2"></div>
-        <div class="column is-4">
-          <label class="label">Enter Your travel dates, where you are going & your Itinerary.</label>
-          <div class="destination-list">
-            {{#each destinations as |destinations| }}
-            <div class="row mb-4 destinations">
-              <div class="col-md-5">
-                <h2>{{destinations.country}}</h2>
-                <h2>{{destinations.destination}}</h2>
-
-              </div>
-              <div class="col-md-7">
-                <p>
-                  {{destinations.itin}}
-                </p>
-                <p>Created by {{destinations.user.name}} on {{format_date destinations.date_created}}</p>
-              </div>
-            </div>
-            {{/each}}
+<div class="field">
+  <label class="country-label">Add Country</label>
+  <div class="control">
+    <input id="autocomplete" class="input" placeholder="Add Country" type="text" />
+  </div>
+</div>
+<br /><br />
+<div class="container animated fadeIn delay-1s">
+  <div class="columns is-multiline is-mobile" style="background-color: rgb(10, 163, 125);">
+    <div class="column is-2"></div>
+    <div class="card-column is-4">
+      <label class="label">Please enter your travel dates, where you are going and your Itinerary.</label>
+      <div class="destination-list">
+        <div class="row mb-4 destinations">
+          <div class="col-md-5">
           </div>
-          <br /><br />
-
+          <div class="col-md-7">
+          </div>
         </div>
-        <div class="column is-1 has-text-centered"></div>
-        <div class="column is-4">
-          <h1 class="datePick">Enter Date</h1>
+      </div>
+      <br /><br />
+      <div class="card">
+        {{#each destinations as |destinations| }}
+        <header class="card-header">
+          <p class="card-header-title">
+            {{destinations.country}}
+          </p>
+          <a href="#" class="card-header-icon" aria-label="more options">
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p>{{destinations.destination}} </p>
+            <p> {{destinations.itin}}</p>
 
-          <input id="date" type="date">
-          <br><br />
+            <br>
 
-          <div class="field">
-            <label class="label">Where are you going?</label>
-            <div class="field-body">
-              <div class="field is-expanded">
-                <div class="field has-addons">
-                  <p class="control is-expanded">
-                    <!--Itin City Input-->
-                    <input class="input" type="text" placeholder="City" id="itinCity" />
-                  </p>
-                </div>
-              </div>
-            </div>
+            <p> Trip date {{format_date destinations.date}} </p>
+            <p>Created by {{destinations.user.name}}</p>
+            
+
           </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">Save</a>
+          <a href="#" class="card-footer-item">Edit</a>
+          <a href="#" class="card-footer-item">Delete</a>
+        </footer>
+        {{/each}}
+      </div>
 
-          <div class="field">
-            <label class="label">Itinerary</label>
-            <div class="control">
+    </div>
+    <div class="column is-1 has-text-centered"></div>
+    <div class="column is-4">
+      <h1 class="datePick">Enter Date</h1>
 
-              <textarea id="itinAct" class="textarea" placeholder="Activities, Sightseeing"></textarea>
-            </div>
-          </div>
+      <input id="date" type="date">
+      <br><br />
 
-          <div class="field is-grouped">
-            <div class="control">
-              <button id="saveItinBtn" class="button is-info is-light">
-                Save
-              </button>
-            </div>
-            <div class="control">
-              <button id="editBtn" class="button is-info is-light">
-                Edit
-              </button>
-            </div>
-            <div class="control">
-              <button id="deleteBtn" class="button is-info is-light">
-                Delete
-              </button>
+      <div class="field">
+        <label class="label">Where are you going?</label>
+        <div class="field-body">
+          <div class="field is-expanded">
+            <div class="field has-addons">
+              <p class="control is-expanded">
+                <!--Itin City Input-->
+                <input class="input" type="text" placeholder="City" id="itinCity" />
+              </p>
             </div>
           </div>
         </div>
-        </form>
+      </div>
+
+      <div class="field">
+        <label class="label">Itinerary</label>
+        <div class="control">
+
+          <textarea id="itinAct" class="textarea" placeholder="Activities, Sightseeing"></textarea>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button id="saveItinBtn" class="button is-info is-light">
+            Save
+          </button>
+        </div>
       </div>
     </div>
+    </form>
   </div>
-  <br /><br />
+</div>
+</div>
+<br /><br />
+<section class="hero"
+  style="background-color: rgb(10, 163, 125); border-top: rgb(12, 14, 15) 5px solid; border-right: rgb(12, 14, 15) 5px solid; border-left: rgb(12, 14, 15) 5px solid; ">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered animated lightSpeedIn">
+        Take Me Away....<i class="fa-solid fa-earth-africa"></i>
+      </h1>
+      {{!-- <footer class="footer"></footer> --}}
 
-  {{!-- <footer class="footer"></footer> --}}
-
- <script src="/controllers/api/autocomplete.js"></script>
-  <script src="/js/dashboard.js"></script>
-
-
-
-
-
-
-
-
-
-
+      <script src="/controllers/api/autocomplete.js"></script>
+      <script src="/js/dashboard.js"></script>
 
 
 
@@ -130,21 +135,14 @@
 
 
 
-  <!-- Loop over each object in the projects array -->
-  {{!-- {{#each destinations as |project| }}
-  <div class="row mb-4 project">
-    <div class="col-md-5">
-      <h2>
-        <!-- Call helper function with triple brackets to render the emoji span as HTML -->
 
-        <a href="/project/{{project.id}}">{{project.name}}</a>
-      </h2>
-      <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-    </div>
-    <div class="col-md-7">
-      <p>
-        {{project.description}}
-      </p>
-    </div>
-  </div>
-  {{/each}} --}}
+
+
+
+
+
+
+
+
+
+      
